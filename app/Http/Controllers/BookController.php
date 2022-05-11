@@ -12,4 +12,11 @@ class BookController extends Controller
             'title'=> 'book'
         ]);
     }
+
+    public function add(Request $request)
+    {
+        return view('pages.book-add',[
+            'title'=> 'book'
+        ]);
+    }
 }

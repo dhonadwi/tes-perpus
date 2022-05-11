@@ -4,7 +4,11 @@
     <link href="{{ url('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 @endpush
 @section('content')
-    <div class="card shadow mb-4">
+<div class="container">
+<form action="">
+    <a href="/buku/add" class="btn btn-success">Tambah</a>
+    <button type="submit" class="btn btn-danger">Hapus</button>  
+    <div class="card shadow mb-4 mt-2">
     <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
     </div>
@@ -39,6 +43,8 @@
         </div>
     </div>
 </div>   
+</form>
+</div>
 @endsection
 
 @push('addon-script')

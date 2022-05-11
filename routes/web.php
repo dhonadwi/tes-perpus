@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::get('/buku', 'BookController@index')->name('buku');
+Route::get('/buku/add', 'BookController@add')->name('tambah-buku');
 Route::get('/transaksi', 'TransactionController@index')->name('transaksi');
