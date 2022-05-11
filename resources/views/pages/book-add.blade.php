@@ -5,14 +5,15 @@
 @endpush
 @section('content')
 <div class="container">
-    <form action="">
+    <form method="POST" action="{{ route('tambah-buku-baru') }}">
+    @csrf
     <div class="form-group">
         <label for="idBuku">ID Buku</label>
-        <input type="text" class="form-control" autofocus>
+        <input type="text" class="form-control" name="id_buku" autofocus>
       </div>
     <div class="form-group">
         <label for="judulBuku">Judul Buku</label>
-        <input type="text" class="form-control">
+        <input type="text" class="form-control" name="judul_buku">
       </div>
       <div class="form-group">
           <label for="kategori">Kategori</label>
@@ -27,7 +28,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Rp. </span>
                 </div>
-                <input type="number" class="form-control" placeholder="Harga Sewa">
+                <input type="number" class="form-control" placeholder="Harga Sewa" name="harga">
                 </div>
         </div>
         <button type="submit" class="btn btn-success">Submit</button>

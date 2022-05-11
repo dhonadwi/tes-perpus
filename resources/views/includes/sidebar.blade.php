@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ route('dashboard') }}">
             <div class="sidebar-brand-icon rotate-n-15">
                 <i class="fas fa-laugh-wink"></i>
             </div>
@@ -18,7 +18,7 @@
                     <span>List Sewa Aktif</span></a>
             </li>
             <li class="nav-item {{ $title==='transaction' ?' active' :'' }}">
-                <a class="nav-link" href="/transaksi">
+                <a class="nav-link" href="{{ route('transaksi') }}">
                     <i class="fas fa-clipboard-list"></i>
                     <span>Transaksi</span></a>
             </li>
@@ -42,7 +42,7 @@
                     <span>Data Penyewa</span></a>
             </li> 
             <li class="nav-item {{ $title==='book' ?' active' :'' }}">
-                <a class="nav-link" href="/buku">
+                <a class="nav-link" href="{{ route('buku') }}">
                     <i class="fas fa-book"></i>
                     <span>Buku</span></a>
             </li>

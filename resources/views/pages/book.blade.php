@@ -10,7 +10,7 @@
     <button type="submit" class="btn btn-danger">Hapus</button>  
     <div class="card shadow mb-4 mt-2">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -29,15 +29,17 @@
                     </tr>
                 </thead>
                <tbody>
-                   <tr>
+                @foreach ($books as $book)
+                    <tr>
                         <td> <div class="form-check form-check-inline">
                             <input class="form-check-input" type="checkbox" value="" id="B001">
                             </div></td>
-                        <td>B001</td>
-                        <td>Wiro Sableng</td>
-                        <td>Komik</td>
-                        <td>$320,800</td>
+                        <td>{{ $book['id_buku'] }}</td>
+                        <td>{{ $book['judul_buku'] }}</td>
+                        <td>{{ $book['kategori'] }}</td>
+                        <td>{{ $book['harga'] }}</td>
                     </tr>
+                @endforeach
                </tbody>
             </table>
         </div>
