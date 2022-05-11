@@ -4,12 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class DashboardController extends Controller
+class BookController extends Controller
 {
     public function index(Request $request)
     {
-        return view('pages.dashboard',[
-            'title'=> 'dashboard'
+        return view('pages.book',[
+            'title'=> 'book'
         ]);
     }
 }

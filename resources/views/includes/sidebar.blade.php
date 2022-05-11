@@ -13,18 +13,18 @@
            Transaksi
         </div>
             <li class="nav-item">
-                <a class="nav-link" href="/">
+                <a class="nav-link" href="/list-sewa">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>List Sewa Aktif</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="/transaksi">
+                    <i class="fas fa-clipboard-list"></i>
                     <span>Transaksi</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="/history">
+                    <i class="fas fa-history"></i>
                     <span>History</span></a>
             </li>
 
@@ -37,13 +37,13 @@
             Admin
         </div>
             <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                <a class="nav-link" href="/data-penyewa">
+                    <i class="fas fa-user"></i>
                     <span>Data Penyewa</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
+            </li> 
+            <li class="nav-item {{ $title==='book' ?' active' :'' }}">
+                <a class="nav-link" href="/buku">
+                    <i class="fas fa-book"></i>
                     <span>Buku</span></a>
             </li>
 

@@ -10,8 +10,9 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Dashboard</title>
-
+    @stack('prepend-style')
     @include('includes.style')
+    @stack('addon-style')
 
 </head>
 
@@ -71,8 +72,9 @@
             </div>
         </div>
     </div>
-
+    @stack('prepend-script')
     @include('includes.script')
+    @stack('addon-script')
 
 </body>
 
