@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'DashboardController@index')->name('dashboard');
 Route::get('/buku', 'BookController@index')->name('buku');
+Route::delete('/buku', 'BookController@remove')->name('hapus-buku');
 Route::get('/buku/add', 'BookController@add')->name('tambah-buku');
 Route::post('/buku/add', 'BookController@create')->name('tambah-buku-baru');
 

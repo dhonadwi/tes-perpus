@@ -18,35 +18,27 @@
       </div>
       <div class="form-group">
         <label for="alamat">Data Buku</label>
-        <select class="custom-select mb-2" name="data_buku" id="data_buku">
+        @for ( $i=1 ;  $i <= 5 ; $i++)
+        <select class="custom-select mb-2" name="data_buku" id="data_buku_{{ $i }}" onchange="total({{ $books }})">
             <option value="">Pilih Buku ....</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
+            @foreach ($books as $book)
+            <option value="{{ $book['id_buku'] }}">{{ $book['judul_buku'] }}</option>
+            @endforeach
         </select>
-        <select class="custom-select  mb-2" name="data_buku" id="data_buku">
-            <option value="">Pilih Buku ....</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <select class="custom-select  mb-2" name="data_buku" id="data_buku">
-            <option value="">Pilih Buku ....</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <select class="custom-select  mb-2" name="data_buku" id="data_buku">
-            <option value="">Pilih Buku ....</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-        <select class="custom-select  mb-2" name="data_buku" id="data_buku">
-            <option value="">Pilih Buku ....</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
-
-        <p>Total Harga Sewa : Rp. 15.000</p>
+        @endfor
       </div>
+      <p>Total Harga Sewa : Rp. <span id='harga'></span></p>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
 @endsection
+
+@push('addon-script')
+    <script>
+      const harga = document.querySelector('#harga');
+      harga.innerHTML = 2000;
+      function total(harga) {
+        console.log(harga)
+      }
+    </script>
+@endpush

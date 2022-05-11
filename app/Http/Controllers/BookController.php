@@ -30,4 +30,14 @@ class BookController extends Controller
         Book::create($data);
         return redirect()->route('buku');
     }
+
+    public function remove(Request $request)
+    {
+        foreach ($request['delete'] as $id) {
+            $book = Book::findOrFail($id);
+            $book->delete();
+        }
+
+        return redirect()->route('buku');
+    }
 }

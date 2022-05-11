@@ -5,46 +5,48 @@
 @endpush
 @section('content')
 <div class="container">
-<form action="">
-    <a href="/buku/add" class="btn btn-success">Tambah</a>
-    <button type="submit" class="btn btn-danger">Hapus</button>  
+<form action="{{ route('hapus-buku') }}" method="POST"> 
+    @method('DELETE')
+    @csrf
     <div class="card shadow mb-4 mt-2">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
-    </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th>
-                            <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck">
-                            </div>
-                        </th>
-                        <th>ID Buku</th>
-                        <th>Judul Buku</th>
-                        <th>Kategori</th>
-                        <th>Harga Sewa</th>
-                    </tr>
-                </thead>
-               <tbody>
-                @foreach ($books as $book)
-                    <tr>
-                        <td> <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="checkbox" value="" id="B001">
-                            </div></td>
-                        <td>{{ $book['id_buku'] }}</td>
-                        <td>{{ $book['judul_buku'] }}</td>
-                        <td>{{ $book['kategori'] }}</td>
-                        <td>{{ $book['harga'] }}</td>
-                    </tr>
-                @endforeach
-               </tbody>
-            </table>
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Data Buku</h6>
         </div>
-    </div>
-</div>   
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>
+                                <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck">
+                                </div>
+                            </th>
+                            <th>ID Buku</th>
+                            <th>Judul Buku</th>
+                            <th>Kategori</th>
+                            <th>Harga Sewa</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                    @foreach ($books as $book)
+                        <tr>
+                            <td> <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" value="{{ $book['id'] }}" name="delete[]">
+                                </div></td>
+                            <td>{{ $book['id_buku'] }}</td>
+                            <td>{{ $book['judul_buku'] }}</td>
+                            <td>{{ $book['kategori'] }}</td>
+                            <td>{{ $book['harga'] }}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+                </table>
+            </div>
+        </div>
+    </div> 
+    <a href="/buku/add" class="btn btn-success">Tambah</a>
+    <button type="submit" class="btn btn-danger">Hapus</button>   
 </form>
 </div>
 @endsection
