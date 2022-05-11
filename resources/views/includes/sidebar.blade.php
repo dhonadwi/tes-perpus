@@ -17,7 +17,7 @@
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>List Sewa Aktif</span></a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ $title==='transaction' ?' active' :'' }}">
                 <a class="nav-link" href="/transaksi">
                     <i class="fas fa-clipboard-list"></i>
                     <span>Transaksi</span></a>
