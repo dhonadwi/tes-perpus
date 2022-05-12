@@ -19,7 +19,7 @@
                         <tr>
                             <th>
                                 <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="defaultCheck">
+                                <input class="form-check-input" type="checkbox" id="defaultCheck" onchange="cek()">
                                 </div>
                             </th>
                             <th>ID Buku</th>
@@ -32,7 +32,7 @@
                     @foreach ($books as $book)
                         <tr>
                             <td> <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="{{ $book['id'] }}" name="delete[]">
+                                <input class="form-check-input" type="checkbox" value="{{ $book['id'] }}" id="checkItem" name="delete[]">
                                 </div></td>
                             <td>{{ $book['id_buku'] }}</td>
                             <td>{{ $book['judul_buku'] }}</td>
@@ -55,4 +55,22 @@
     <script src="{{ url('vendor/datatables/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
     <script src="{{ url('js/demo/datatables-demo.js') }}"></script>
+    <script>
+        const checkAll = document.querySelector('#defaultCheck');
+        const checkItem = document.querySelectorAll('#checkItem');
+
+        function cek()
+        {
+            if(checkAll.checked){
+                checkItem.forEach(item => {
+                    item.checked = true;
+                });
+            }else{
+                checkItem.forEach(item => {
+                    item.checked = false;
+                });
+            }
+        }
+
+    </script>
 @endpush

@@ -19,15 +19,15 @@
       <div class="form-group">
         <label for="alamat">Data Buku</label>
         @for ( $i=1 ;  $i <= 5 ; $i++)
-        <select class="custom-select mb-2" name="data_buku" id="data_buku_{{ $i }}" onchange="total({{ $books }})">
+        <select class="custom-select mb-2" name="data_buku_{{ $i }}" id="data_buku_{{ $i }}" onchange="total()">
             <option value="">Pilih Buku ....</option>
             @foreach ($books as $book)
-            <option value="{{ $book['id_buku'] }}">{{ $book['judul_buku'] }}</option>
+            <option value="{{ $book['id_buku'] }},{{ $book['harga'] }}">{{ $book['judul_buku'] }}</option>
             @endforeach
         </select>
         @endfor
       </div>
-      <p>Total Harga Sewa : Rp. <span id='harga'></span></p>
+      <p>Total Harga Sewa : Rp. <span id='harga'>0</span></p>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
 </div>
@@ -35,10 +35,18 @@
 
 @push('addon-script')
     <script>
-      const harga = document.querySelector('#harga');
-      harga.innerHTML = 2000;
-      function total(harga) {
-        console.log(harga)
+      let harga = document.querySelector('#harga');
+
+      const total = () => {
+        let jumlah = 0;
+        for(let i = 1; i <= 5; i++) {
+          if(document.querySelector(`#data_buku_${i}`).value != '') {
+          const tes = document.querySelector(`#data_buku_${i}`).value.replace(/^\[\'|\'\]$/g,'').split(",");
+          jumlah += +tes[1];
+          console.log(tes)
+          }
+        }
+         harga.innerHTML = jumlah;
       }
     </script>
 @endpush
