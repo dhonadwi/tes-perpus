@@ -23,7 +23,7 @@
         <select class="custom-select mb-2" name="data_buku[]" id="data_buku_{{ $i }}" onchange="total()">
             <option value="">Pilih Buku ....</option>
             @foreach ($books as $book)
-            <option value="{{ $book['id_buku'] }},{{ $book['harga'] }}">{{ $book['judul_buku'] }}</option>
+            <option value="{{ $book['judul_buku'] }},{{ $book['harga'] }}">{{ $book['judul_buku'] }}</option>
             @endforeach
         </select>
         @endfor

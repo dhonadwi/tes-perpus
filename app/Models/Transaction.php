@@ -12,7 +12,12 @@ class Transaction extends Model
     protected $fillable = [
         'nama','no_hp', 'alamat', 'harga', 'data_buku'
     ];
+
     protected $casts = [
     'data_buku' => 'array', // Will convarted to (Array)
-];
+    ];
+
+     public function book() {
+        return $this->belongsTo(Book::class, 'id_buku', 'data_buku');
+    }
 }

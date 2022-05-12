@@ -19,6 +19,8 @@ Route::delete('/buku', 'BookController@remove')->name('hapus-buku');
 Route::get('/buku/add', 'BookController@add')->name('tambah-buku');
 Route::post('/buku/add', 'BookController@create')->name('tambah-buku-baru');
 
+Route::get('/list-sewa', 'TransactionController@show')->name('list-sewa');
 Route::get('/transaksi', 'TransactionController@index')->name('transaksi');
 
 Route::post('/transaksi', 'TransactionController@add')->name('tambah-transaksi');
+

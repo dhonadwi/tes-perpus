@@ -12,7 +12,7 @@
         <div class="sidebar-heading">
            Transaksi
         </div>
-            <li class="nav-item">
+            <li class="nav-item {{ $title==='list-sewa' ?' active' :'' }}">
                 <a class="nav-link" href="/list-sewa">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>List Sewa Aktif</span></a>

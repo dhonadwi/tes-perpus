@@ -36,6 +36,15 @@ class TransactionController extends Controller
         $data['data_buku'] = $data_buku;
         
         Transaction::create($data);
-        return redirect()->route('dashboard');
+        return redirect()->route('list-sewa');
+    }
+
+    public function show(Request $request)
+    {
+        $transactions = Transaction::all();
+        return view('pages.list-sewa',[
+            'title'=> 'list-sewa',
+            'transactions' => $transactions
+        ]);
     }
 }

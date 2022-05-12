@@ -20,6 +20,7 @@ class CreateTransactionsTable extends Migration
             $table->string('alamat');
             $table->integer('harga');
             $table->string('data_buku');
+            $table->softDeletes();
             $table->timestamps();
         });
     }
