@@ -20,3 +20,5 @@ Route::get('/buku/add', 'BookController@add')->name('tambah-buku');
 Route::post('/buku/add', 'BookController@create')->name('tambah-buku-baru');
 
 Route::get('/transaksi', 'TransactionController@index')->name('transaksi');
+
+Route::post('/transaksi', 'TransactionController@add')->name('tambah-transaksi');
