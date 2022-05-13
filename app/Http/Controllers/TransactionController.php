@@ -47,4 +47,14 @@ class TransactionController extends Controller
             'transactions' => $transactions
         ]);
     }
+
+    public function remove(Request $request)
+    {
+        foreach ($request['delete'] as $id) {
+            $transaction = Transaction::findOrFail($id);
+            $transaction->delete();
+        }
+
+        return redirect()->route('list-sewa');
+    }
 }

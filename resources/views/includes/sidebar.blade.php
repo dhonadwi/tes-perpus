@@ -36,8 +36,8 @@
         <div class="sidebar-heading">
             Admin
         </div>
-            <li class="nav-item">
-                <a class="nav-link" href="/data-penyewa">
+            <li class="nav-item {{ $title==='data-penyewa' ?' active' :'' }}">
+                <a class="nav-link" href="{{ route('data-penyewa') }}">
                     <i class="fas fa-user"></i>
                     <span>Data Penyewa</span></a>
             </li> 
