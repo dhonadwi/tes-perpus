@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BookRequest;
 use Illuminate\Http\Request;
 use App\Models\Book;
 
@@ -19,12 +20,14 @@ class BookController extends Controller
     public function add(Request $request)
     {
         return view('pages.book-add',[
-            'title'=> 'book'
+            'title'=> 'book',
+            
         ]);
     }
 
-    public function create(Request $request)
+    public function create(BookRequest $request)
     {
+
         $data = $request->all();
 
         Book::create($data);

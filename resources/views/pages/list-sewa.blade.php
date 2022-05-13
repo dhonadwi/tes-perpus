@@ -21,6 +21,7 @@
                               <th>No Hape</th>
                               <th>Alamat</th>
                               <th>Data Buku</th>
+                              <th>Harga Sewa</th>
                           </tr>
                       </thead>
                   <tbody>
@@ -30,12 +31,13 @@
                             <td>{{ $item['no_hp'] }}</td>
                             <td>{{ $item['alamat'] }}</td>
                             <td>
-                              <ul>
-                                @foreach ($item->data_buku as $buku )
-                                <li>{{ $buku }}</li>                                
-                                @endforeach
-                              </ul>
+                                <ul>
+                                    @foreach ($item->data_buku as $buku )
+                                    <li>{{ $buku }}</li>                                
+                                    @endforeach
+                                </ul>
                             </td>
+                            <td>{{ $item->harga }}</td>
                         </tr>
                     @endforeach
                   </tbody>

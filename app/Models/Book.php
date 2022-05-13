@@ -10,9 +10,12 @@ class Book extends Model
 {
     use SoftDeletes;
 
-    protected $fillable = [
-        'id_buku','judul_buku', 'kategori', 'harga'
-    ];
+    // protected $fillable = [
+    //     'id_buku','judul_buku', 'kategori', 'harga'
+    // ];
 
+    protected $guarded = [
+        'id'
+    ];
    
 }

@@ -1,10 +1,17 @@
 @extends('layouts.app')
 
-@push('addon-style')
-    <link href="{{ url('vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-@endpush
 @section('content')
 <div class="container">
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form method="POST" action="{{ route('tambah-buku-baru') }}">
     @csrf
     <div class="form-group">
@@ -37,8 +44,3 @@
 </div>
 @endsection
 
-@push('addon-script')
-    <script src="{{ url('vendor/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src="{{ url('vendor/datatables/dataTables.bootstrap4.min.js') }}"></script>
-    <script src="{{ url('js/demo/datatables-demo.js') }}"></script>
-@endpush
