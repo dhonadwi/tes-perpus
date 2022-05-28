@@ -31,7 +31,7 @@ class BookController extends Controller
         $data = $request->all();
 
         Book::create($data);
-        return redirect()->route('buku');
+        return redirect()->route('buku')->with('message','Data Buku sudah Tersimpan');
     }
 
     public function remove(Request $request)
@@ -41,6 +41,6 @@ class BookController extends Controller
             $book->delete();
         }
 
-        return redirect()->route('buku');
+        return redirect()->route('buku')->with('message','Data Buku Sudah Terhapus');
     }
 }

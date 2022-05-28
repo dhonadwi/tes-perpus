@@ -8,9 +8,16 @@
     @if($errors->any())
         <div class="alert alert-danger">
             <ul>
-                {{-- @foreach($errors->all() as $error) --}}
+                @foreach($errors->all() as $error)
                     <li>tes</li>
-                {{-- @endforeach --}}
+                @endforeach
+            </ul>
+        </div>
+    @endif
+    @if (session()->has('message'))
+        <div class="alert alert-success">
+            <ul>
+                <li>{{ session()->get('message') }}</li>
             </ul>
         </div>
     @endif
