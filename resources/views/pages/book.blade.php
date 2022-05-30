@@ -51,7 +51,7 @@
                             <td> <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="{{ $book['id'] }}" id="checkItem" name="delete[]">
                                 </div></td>
-                            <td>{{ $book['id_buku'] }}</td>
+                            <td>{{ $book['id'] }}</td>
                             <td>{{ $book['judul_buku'] }}</td>
                             <td>{{ $book['kategori'] }}</td>
                             <td>{{ $book['harga'] }}</td>

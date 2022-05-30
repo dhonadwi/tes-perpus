@@ -29,7 +29,7 @@ class BookController extends Controller
     {
 
         $data = $request->all();
-
+        // return $data;
         Book::create($data);
         return redirect()->route('buku')->with('message','Data Buku sudah Tersimpan');
     }

@@ -24,7 +24,7 @@ class BookRequest extends FormRequest
     public function rules()
     {
         return [
-            'id_buku' => 'required|string|unique:books',
+            // 'id_buku' => 'required|string|unique:books',
             'judul_buku' => 'required|string',
             'kategori' => 'required|string',
             'harga' => 'required|integer',

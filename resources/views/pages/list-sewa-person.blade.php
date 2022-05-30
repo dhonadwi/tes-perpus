@@ -29,11 +29,8 @@
                               <th>Harga Sewa</th>
                           </tr>
                       </thead>
-                  <tbody>                    
-                    @foreach ($transactions as $item)
-                    @php
-                        $details = $transactions[$loop->index]->transactionDetails 
-                    @endphp 
+                  <tbody>
+                    @foreach ($transaction as $item)
                         <tr>
                             <td> <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="{{ $item['id'] }}" id="checkItem" name="delete[]">
@@ -42,12 +39,15 @@
                                 <a href="{{ route('list-sewa-detail',$item->id) }}"> {{ $item->nama }}</a>   
                             </td>
                             <td>{{ $item->no_hp }}</td>
-                            <td>{{ $item->alamat }}</td>
+                            <td>{{ $item->book->judul_buku }}</td>
                             <td>
-                                <ul>                                  
-                                    @foreach ($details as $detail )
-                                    <li>{{ $detail->book->judul_buku }}</li>                                                                   
-                                    @endforeach                                   
+                                <ul>
+                                    {{-- {{ dd($item['transaction_detail']) }} --}}
+                                    {{-- @foreach ($transactions[$index]->transaction_detail as $buku ) --}}
+                                    {{-- <li>{{ $buku->book->judul_buku }}</li>                                 --}}
+                                    {{-- <li>a</li> --}}
+                                    {{-- @endforeach --}}
+                                    {{-- <li>{{ $item->transaction_detail }}</li> --}}
                                 </ul>
                             </td>
                             <td>{{ $item->harga }}</td>

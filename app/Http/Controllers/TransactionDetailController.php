@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Transaction;
 use App\Models\TransactionDetail;
 use Illuminate\Http\Request;
 
@@ -12,9 +13,15 @@ class TransactionDetailController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request, $id)
     {
-        //
+        $transaction = TransactionDetail::with(['transaction','book'])
+            ->where('transaction_id','=',$id)->get();
+        return $transaction;
+        return view('pages.list-sewa-person',[
+            'title' => 'List Sewa Person',
+            'transaction' => $transaction
+        ]);
     }
 
     /**

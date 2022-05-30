@@ -23,6 +23,7 @@ Route::get('/data-penyewa', 'UserController@index')->name('data-penyewa');
 Route::delete('/data-penyewa', 'TransactionController@remove')->name('hapus-penyewa');
 
 Route::get('/list-sewa', 'TransactionController@show')->name('list-sewa');
+Route::get('/list-sewa/{id}', 'TransactionDetailController@index')->name('list-sewa-detail');
 Route::get('/transaksi', 'TransactionController@index')->name('transaksi');
 
 Route::post('/transaksi', 'TransactionController@add')->name('tambah-transaksi');

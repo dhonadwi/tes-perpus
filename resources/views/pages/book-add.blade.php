@@ -12,15 +12,11 @@
         </div>
     @endif
 
-    <form method="POST" action="{{ route('tambah-buku-baru') }}">
+<form method="POST" action="{{ route('tambah-buku-baru') }}">
     @csrf
     <div class="form-group">
-        <label for="idBuku">ID Buku</label>
-        <input type="text" class="form-control" name="id_buku" autofocus>
-      </div>
-    <div class="form-group">
         <label for="judulBuku">Judul Buku</label>
-        <input type="text" class="form-control" name="judul_buku">
+        <input type="text" class="form-control" name="judul_buku" autofocus>
       </div>
       <div class="form-group">
           <label for="kategori">Kategori</label>
