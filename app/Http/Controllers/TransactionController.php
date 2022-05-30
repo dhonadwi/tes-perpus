@@ -26,7 +26,6 @@ class TransactionController extends Controller
         $data['no_hp'] = $request->hp;
         $data['alamat'] = $request->alamat;
         $data['harga'] = $request->harga;
-        $data['data_buku'] = 'data_buku';
         
         $transaction = Transaction::create($data);
 

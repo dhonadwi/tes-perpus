@@ -38,9 +38,7 @@
                             <td> <div class="form-check form-check-inline">
                                 <input class="form-check-input" type="checkbox" value="{{ $item['id'] }}" id="checkItem" name="delete[]">
                                 </div></td>
-                            <td>
-                                <a href="{{ route('list-sewa-detail',$item->id) }}"> {{ $item->nama }}</a>   
-                            </td>
+                            <td>{{ $item->nama }}</td>
                             <td>{{ $item->no_hp }}</td>
                             <td>{{ $item->alamat }}</td>
                             <td>

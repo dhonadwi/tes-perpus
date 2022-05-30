@@ -23,7 +23,7 @@
         <select class="custom-select mb-2" name="data_buku[]" id="data_buku_{{ $i }}" onchange="total()">
             <option value="">Pilih Buku ....</option>
             @foreach ($books as $book)
-            <option value="{{ $book['id'] }},{{ $book['harga'] }}">{{ $book['judul_buku'] }}</option>
+            <option value="{{ $book['id_book'] }},{{ $book['harga'] }}">{{ $book['judul_buku'] }}</option>
             @endforeach
         </select>
         @endfor
@@ -46,7 +46,6 @@
           if(document.querySelector(`#data_buku_${i}`).value != '') {
           const tes = document.querySelector(`#data_buku_${i}`).value.replace(/^\[\'|\'\]$/g,'').split(",");
           jumlah += +tes[1];
-          console.log(tes)
           }
         }
          harga.innerHTML = jumlah;
